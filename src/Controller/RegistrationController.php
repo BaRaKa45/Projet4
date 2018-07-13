@@ -33,7 +33,7 @@ class RegistrationController extends Controller
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('security_login');
+            return $this->redirectToRoute('user_profil');
         }
 
         return $this->render(
