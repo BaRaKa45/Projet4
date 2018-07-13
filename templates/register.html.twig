@@ -1,13 +1,32 @@
 {% extends 'layout.html.twig' %}
 
 {% block layout %}
-{{ form_start(form) }}
-    {{ form_row(form.fullName) }}
-    {{ form_row(form.username) }}
-    {{ form_row(form.email) }}
-    {{ form_row(form.password.first) }}
-    {{ form_row(form.password.second) }}
+    <div class="jumbotron">
+        <div class="row"><h1 class="text-center col-12">FORMULAIRE D'INSCRIPTION</h1></div>
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="offset-1 col-10">
+                {{ form_row(form.fullName) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-1 col-10">
+                {{ form_row(form.username) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-1 col-10">
+                {{ form_row(form.email) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-1 col-5">{{ form_row(form.password.first) }}</div>
+            <div class="col-5">{{ form_row(form.password.second) }}</div>
+        </div>
 
-<button type="submit">S'inscrire !</button>
-{{ form_end(form) }}
+        <div class="row">
+            <button type="submit" class="btn btn-danger offset-1 col-10 mt-4 p-3">Inscription</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
 {% endblock %}
